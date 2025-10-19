@@ -1,5 +1,5 @@
 # MySQL Server Script for ALX Book Store Database
-# This script creates the alxbookstore database in MySQL server
+# This script creates the alx_book_store database in MySQL server
 # It handles connection errors and avoids using SELECT or SHOW statements
 
 # Import MySQL connector for database operations
@@ -8,7 +8,7 @@ import mysql.connector
 # Function to create the database
 def create_database():
     """
-    Creates the alxbookstore database if it doesn't exist
+    Creates the alx_book_store database if it doesn't exist
     Uses CREATE DATABASE IF NOT EXISTS to avoid SELECT/SHOW statements
     """
     # Initialize connection variable
@@ -30,10 +30,10 @@ def create_database():
             
             # Create database without using SELECT or SHOW statements
             # CREATE DATABASE IF NOT EXISTS handles existence check internally
-            cursor.execute("CREATE DATABASE IF NOT EXISTS alxbookstore")
+            cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
             
             # Print success message when database is created
-            print("Database 'alxbookstore' created successfully!")
+            print("Database 'alx_book_store' created successfully!")
             
     # Handle MySQL specific errors
     except mysql.connector.Error as e:
