@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 MySQL Server Script for ALX Book Store Database
 Creates the alx_book_store database if it doesn't exist
@@ -28,10 +27,8 @@ def create_database():
             
             print("Database 'alx_book_store' created successfully!")
             
-    except Error as e:
+    except mysql.connector.Error as e:
         print(f"Error: Failed to connect to the database - {e}")
-    except Exception as e:
-        print(f"Error: An unexpected error occurred - {e}")
     finally:
         # Close connection properly
         if connection and connection.is_connected():
