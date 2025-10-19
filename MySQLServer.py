@@ -1,31 +1,30 @@
 """
 MySQL Server Script for ALX Book Store Database
-Creates the alx_book_store database if it doesn't exist
+Creates the alxbookstore database if it doesn't exist
 """
 
 import mysql.connector
 from mysql.connector import Error
 
 def create_database():
-    """Create the alx_book_store database if it doesn't exist"""
+    """Create the alxbookstore database if it doesn't exist"""
     connection = None
     try:
         # Connect to MySQL server without specifying a database
         connection = mysql.connector.connect(
             host='localhost',
-            user='root',      # Change if needed
-            password=''       # Add your MySQL password here
+            user='root',
+            password=''
         )
         
         if connection.is_connected():
             cursor = connection.cursor()
             
             # Create database if it doesn't exist
-            # Using CREATE DATABASE IF NOT EXISTS to avoid SELECT/SHOW statements
-            create_db_query = "CREATE DATABASE IF NOT EXISTS alx_book_store"
+            create_db_query = "CREATE DATABASE IF NOT EXISTS alxbookstore"
             cursor.execute(create_db_query)
             
-            print("Database 'alx_book_store' created successfully!")
+            print("Database 'alxbookstore' created successfully!")
             
     except mysql.connector.Error as e:
         print(f"Error: Failed to connect to the database - {e}")
