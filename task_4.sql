@@ -1,2 +1,3 @@
--- Print full description of books table from alx_book_store database
-SHOW CREATE TABLE alx_book_store.books;
+-- Get full description of books table
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS 
+WHERE TABLE_NAME = 'books';
